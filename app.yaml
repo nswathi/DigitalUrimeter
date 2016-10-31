@@ -1,0 +1,13 @@
+handlers:
+-   url: /feedbacks/
+    static_dir: feedbacks
+    
+-   url: /.*
+    script: index.html
+
+-   url: /css/
+    static_dir: static
+
+-   url: /js/
+    static_dir: static
+
