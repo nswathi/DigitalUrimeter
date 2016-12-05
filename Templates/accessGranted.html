@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/static/favicon.ico" type="image/x-icon"/>
+<style>
+.button {
+	font-size: 20px;
+    font-family: "San Francisco";
+    
+    background-color: #1560FB; 
+    border: none;
+    border-radius: 12px;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    
+  	font-weight: 100;
+    margin: 23px 23px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button1:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+h4 {
+  color: #ffffff;
+  background-color: #0060FF;
+  font-family: "San Francisco";
+  font-size: 1.171em;
+  font-weight: bold;
+  padding: 5px;
+  margin: 15px 0px 0px 0px;
+  text-shadow: 1px 1px 3px #3F3F3F;
+}
+</style>
+</head>
+
+<body>
+	<h4></h4>
+	<p></p>
+	{% for row in rows %}
+	<a class="btn" href="/patient/{{row[0]}}_{{row[1]}}">
+	<button class="button button1" type= "submit" style="text-align:center;">{{row[0]}}<br>{{row[1]}}</button></a>
+	{% endfor %}
+	<a href = "http://localhost:5000/" style="text-align:right;" font-family: "San Francisco";><h4>Logout</h4></a>
+</body>
+
+</html>

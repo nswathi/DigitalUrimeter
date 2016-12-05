@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <META HTTP-EQUIV="refresh" CONTENT="5">
+    <title>info</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="/static/style_vitals.css">
+    <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   <div class="wrapper">
+    <header>
+	<article>
+        <h2 style="text-align:center;" font-size= 3.5em;>{{info[0]}}</h2>
+	</article>
+    </header>
+
+    <main>
+      <article>
+      <div>
+      <p font-size= "2em;">EKG</p>
+        <a href="/static/EKG.gif" target="_blank"><img src="/static/EKG.gif"/></a>
+    <div>
+        <p style="text-align:center;" font-weight= "bold;" font-size = "60px;">Urine Quantity This hour: {{info[6]}} ml</p>	
+    </div>
+    <div>
+        <p style="display: inline-block;" font-weight= "bold;">Systolic BP:</p>	
+        	<p style="display: inline-block;">{{info[2]}} mmHg</p>
+     </div>
+     <div>   	
+    	<p style="display: inline-block;" font-weight: bold;>Diastolic BP: </p>	
+        	<p style="display: inline-block;">{{info[3]}} mmHg</p>
+    </div> 
+    <div>   	
+        <p style="display: inline-block;" font-weight: bold;>Heartrate:</p>	
+        	<p style="display: inline-block;">{{info[1]}} BPM</p>
+	</div>
+	
+	<div>   	
+        <p style="display: inline-block;" font-weight: bold;>Pulse Rate:</p>	
+        	<p style="display: inline-block;">{{info[4]}}</p>
+    </div>
+    <div>
+        <p style="display: inline-block;" font-weight: bold;>Breathings per minute:</p>	
+        	<p style="display: inline-block;">{{info[5]}}</p>
+	</div>
+    </main>
+  </div>
+</body>
+</html>

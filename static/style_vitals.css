@@ -1,0 +1,316 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "San Francisco";
+  font-size: 100%;
+  max-width: 95%;
+  color: #999999;
+  background-color: #444444;
+}
+
+.wrapper {
+  box-shadow: 0px 2px 8px 5px #000000;
+  -webkit-box-shadow: 0px 2px 8px 5px #000000; /* WebKit */
+  -moz-box-shadow: 0px 2px 8px 5px #000000; /* Firefox */
+  background-color: #000000;
+}
+
+p {
+  padding: 10px 4px 4px 4px;
+  margin: 0;
+}
+
+header {
+  margin: 15px auto;
+}
+
+#headertop {
+  height: 200px;
+  background-color: #000000;
+  background-image: linear-gradient(#2F2F2F 0%,#000000 100%);
+  background-image: -webkit-linear-gradient(#2F2F2F 0%,#000000 100%);
+}
+
+#headerimage {
+  float: left;
+  margin: 20px;
+  border: 5px solid #FFFFFF;
+  box-shadow: 0px 2px 8px 1px #000000;
+  -webkit-box-shadow: 0px 2px 8px 1px #000000; /* WebKit */
+  -moz-box-shadow: 0px 2px 8px 1px #000000; /* Firefox */
+}
+
+.headertextlarge {
+  color: #0060FF;
+  font-size: 2.000em;
+  padding: 20px 10px 0px 0px;
+  letter-spacing: 3px;
+  line-height: 1em;
+  margin: 5px;
+  font-variant: small-caps;
+  text-shadow: 1px 1px 3px #000000;
+  font-family: "San Francisco";
+  text-align: center;
+}
+
+.headertextsmall {
+  color: #CFCFCF;
+  font-size: 1em;
+  padding: 0px 10px 0px 5px;
+  letter-spacing: 5px;
+  margin: 5px;
+  text-shadow: 1px 1px 3px #000000;
+  font-family: "San Francisco";
+  text-align: right;
+}
+
+#headermiddle {
+  height: 10px;
+  background-color: #000000;
+}
+
+#headerbottom {
+  background-color: #0080FF;
+  background-image: linear-gradient(#00A0FF 0%, #0060FF 100%);
+  background-image: -webkit-linear-gradient(#00A0FF 0%, #0060FF 100%);
+}
+
+#subnavi {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navi {
+  font-family: "San Francisco";
+  font-size: 1.5em;
+  text-shadow:1px 1px 2px #2F2F2F;
+}
+
+.navi a:link, .navi a:active, .navi a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0px 15px;
+  margin: 0px;
+  border-left: solid 1px #00A0FF;
+  border-right: solid 1px #0060FF;
+}
+
+.navi a:hover, .navi a:focus {
+  color: #0F0F0F;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: "San Francisco";
+}
+
+main {
+  padding: 0;
+  margin: 0 auto;
+  display: block;  /*wegen Fehldarstellung IE*/
+}
+
+article {
+  padding: 8px;
+  margin: 0 auto;
+  font-size: 1.25em;
+  line-height: 1.400em;
+  text-align: justify;
+}
+
+footer {
+  height: 200px;
+  padding: 0;
+  margin: 0 auto;
+  background-color: #000000;
+  background-image: linear-gradient(#000000 0%,#2F2F2F 100%);
+  background-image: -webkit-linear-gradient(#000000 0%,#2F2F2F 100%);
+}
+
+.fussinhalt {
+  font-family: "San Francisco";
+  color: #0060FF;
+  float: left;
+  font-size: 0.800em;
+  width: 50%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 10px 0 0 0;
+  margin: 10px 0 0 0;
+  text-shadow: 1px 1px 1px #000000;
+}
+
+.fussinhalt h4 {
+ background-color: #9F9F9F;
+ box-shadow: 1px 1px 3px black;
+ display: inline;
+ padding: 5px 15px;
+}
+
+.fussinhalt p {
+  padding: 2px;
+}
+
+h1 {
+  background-color: inherit;
+  color: #0060FF;
+  font-family: "San Francisco";
+  font-size: 1.500em;
+  text-align: center;
+  margin: 15px 0 5px 0;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+h2 {
+  color: #0060FF;
+  font-family: "San Francisco";
+  font-size: 1.338em;
+  padding: 8px 0px 0px 16px;
+  margin: 8px 0px 0px 0px;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+h3 {
+  color: #FFFFFF;
+  background-color: inherit;
+  font-family: "San Francisco";
+  font-size: 1.254em;
+  text-align: center;
+  padding: 8px 0px 0px 5px;
+  margin: 8px 0px 0px 0px;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+h4 {
+  color: #ffffff;
+  background-color: #0060FF;
+  font-family: "San Francisco";
+  font-size: 1.171em;
+  font-weight: bold;
+  padding: 5px;
+  margin: 15px 0px 0px 0px;
+  text-shadow: 1px 1px 3px #3F3F3F;
+}
+
+h5 {
+  color: #6F6F6F;
+  font-family: Kalam, georgia, "trebuchet ms",serif;
+  font-size: 1em;
+  font-weight: bold;
+  padding-left: 5px;
+  margin: 12px 0px 0px 0px;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+a:link, a:visited, a:active {
+  color: #0060FF;
+  background-color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover, a:focus {
+  color: #6F6F6F;
+  background-color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.clear {
+ clear: both;
+}
+
+.copyright {
+ font-size: 7pt;
+ color: #999999;
+ margin-top: 15px;
+}
+/******************Besonderheiten für Bildschirmgroesse max. 768px**********************/
+
+@media (max-width: 768px) {
+
+header {
+  font-size: 0.7em;
+}
+#headerbottom {
+  background-color: #FFFFFF;
+  background-image: linear-gradient(#FFFFFF 0%, #FFFFFF 100%);
+  background-image: -webkit-linear-gradient(#FFFFFF 0%, #FFFFFF 100%);
+}
+
+.navi a:link, .navi a:active, .navi a:visited {
+  display: block;
+  background-color: #0080FF;
+  background-image: linear-gradient(#00A0FF 0%, #0060FF 100%);
+  background-image: -webkit-linear-gradient(#00A0FF 0%, #0060FF 100%);
+  padding: 5px;
+}
+
+}
+
+/*****************Besonderheiten für Bildschirmgroesse max. 480px***********************/
+
+@media (max-width: 480px) {
+.headertextlarge {
+  font-size: 1.500em;
+  padding: 15px 0px 0px 0px;
+  text-align: center;
+}
+.headertextsmall {
+  font-size: 1em;
+  line-height: 1em;
+  text-align: center;
+}
+
+#headerimage {
+  float: none;
+  width: 180px;
+  margin: 15px 50px 0px 50px;
+  border: 5px solid #FFFFFF;
+}
+
+#headertop {
+  height: 210px;
+}
+
+article {
+  padding: 2px;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.338em;
+}
+
+.fussinhalt {
+  letter-spacing: 1px;
+  padding: 2px 0 0 0;
+}
+
+.fussinhalt h4 {
+ padding: 5px;
+}
+
+h1 {
+  font-size: 1.250em;
+}
+
+#parent {
+  display: flex;
+}
+#narrow {
+  text-align: right;
+  width: 200px;
+  background: lightblue;
+}
+#wide {
+  text-align: left;
+  width: calc(100% - 200px);
+  background: lightgreen;
+}
+}

@@ -1,0 +1,597 @@
+
+// Font Mixin
+@mixin fontFace($fontSrc, $fontName)
+  font-family: '#{$fontName}'
+  src: font-url("#{$fontSrc}.eot" + "?#iefix") format('embedded-opentype'), font-url("#{$fontSrc}.woff") format('woff'), font-url("#{$fontSrc}.ttf") format('truetype'), font-url("#{$fontSrc}.svg" + "##{$fontName}") format('svg')
+  font-weight: normal
+  font-style: normal
+
+
+/* Ultra Light */
+@font-face 
+  font-family: "San Francisco"
+  font-weight: 100
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff")
+
+/* Regular */
+@font-face
+  font-family: "San Francisco"
+  font-weight: 400
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff")
+
+/* Bold */
+@font-face 
+  font-family: "San Francisco"
+  font-weight: 700
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff")
+
+$font-primary: "San Francisco", "Helvetica Neue", sans-serif
+
+
+// Vars
+
+$breakpoint-mobile: 480px
+$breakpoint-tablet: 768px 
+$breakpoint-desktop: 1024px
+
+$brand-100: #E9F0FF
+$brand-300: #A3C0FC
+$brand-500: #1560FB
+$brand-600: #0A4DD9
+
+$black: #313131
+
+$icon-arrow-short-right: "\f061"
+$icon-arrow-short-up: "\f062"
+$icon-chevron-right: "\f054"
+$icon-cloud-download: "\f0ed"
+$icon-eye: "\f06e"
+
+$shadows-small:  multiple-box-shadow(700)
+$shadows-medium: multiple-box-shadow(200)
+$shadows-big:    multiple-box-shadow(100)
+
+// n is number of stars required
+@function multiple-box-shadow ($n) 
+  $value: '#{random(2000)}px #{random(2000)}px #A3C0FC'
+  @for $i from 2 through $n
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #A3C0FC'
+
+  @return unquote($value)
+
+// Defaults
+
+html, body
+  margin: 0
+  padding: 0
+  font-family: $font-primary
+  font-size: 15px
+
+body
+  @media (min-width: $breakpoint-tablet)
+    width: 100%
+
+
+p
+  margin: 0
+  color: $black
+  font-weight: 400
+  word-wrap: break-word
+
+a
+  transition: border .1s linear,color .1s linear,background-color .1s linear
+  -webkit-transition: border .1s linear,color .1s linear,background-color .1s linear
+  color: $black
+  background-color: transparent
+  text-decoration: none
+  white-space: nowrap
+
+h1
+  font-size: 28px
+  font-weight: 700
+
+h2
+  font-size: 18px
+  font-weight: 700
+
+
+
+
+// Placeholders
+
+#tag
+  margin: 0 0 20px 0
+  font-size: 12px
+  font-weight: 600
+  letter-spacing: 1px
+  text-transform: uppercase
+  @media (min-width: $breakpoint-desktop)
+    margin: 5px 30px 0 0 
+
+#fadeUp-animation
+  opacity: 0  /* make things invisible upon start */
+  animation: fadeUp ease-in 1 /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  animation-fill-mode: forwards   /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  animation-duration: .5s
+
+#grow
+  -ms-transform: scale(1.2,1.2) /* IE 9 */
+  -webkit-transform: scale(1.2,1.2) /* Safari */
+  transform: scale(1.2,1.2)
+
+
+// Animations
+
+/* Wobble Horizontal */
+@-webkit-keyframes hvr-wobble-horizontal
+  16.65%
+    -webkit-transform: translateX(8px)
+    transform: translateX(8px)
+
+  33.3%
+    -webkit-transform: translateX(-6px)
+    transform: translateX(-6px)
+
+  49.95%
+    -webkit-transform: translateX(4px)
+    transform: translateX(4px)
+
+  66.6% 
+    -webkit-transform: translateX(-2px)
+    transform: translateX(-2px)
+
+  83.25%
+    -webkit-transform: translateX(1px)
+    transform: translateX(1px)
+
+  100%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+
+@keyframes hvr-wobble-horizontal
+  16.65%
+    -webkit-transform: translateX(8px)
+    transform: translateX(8px)
+
+  33.3%
+    -webkit-transform: translateX(-6px)
+    transform: translateX(-6px)
+
+  49.95%
+    -webkit-transform: translateX(4px)
+    transform: translateX(4px)
+
+  66.6% 
+    -webkit-transform: translateX(-2px)
+    transform: translateX(-2px)
+
+  83.25%
+    -webkit-transform: translateX(1px)
+    transform: translateX(1px)
+
+  100%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+
+.wobble
+  display: inline-block
+  vertical-align: middle
+  -webkit-transform: translateZ(0)
+  transform: translateZ(0)
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0)
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  -moz-osx-font-smoothing: grayscale
+  &:hover, &:focus, &:active
+    -webkit-animation-name: hvr-wobble-horizontal
+    animation-name: hvr-wobble-horizontal
+    -webkit-animation-duration: 1s
+    animation-duration: 1s
+    -webkit-animation-timing-function: ease-in-out
+    animation-timing-function: ease-in-out
+    -webkit-animation-iteration-count: 1
+    animation-iteration-count: 1
+
+/* Fade In Animation */
+@-webkit-keyframes fadeUp
+  0%
+    -webkit-transform: translateY(20px)
+    transform: translateY(20px)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes fadeUp
+  0%
+    -webkit-transform: translateY(20px)
+    transform: translateY(20px)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+    opacity: 1
+
+/* Fade In Animation */
+@-webkit-keyframes fadeIn
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes animStar
+  from  
+    transform: translateY(0px)
+  to    
+    transform: translateY(-2000px)
+
+
+// - - - - - Main Styling - - - - - //
+
+.opl 
+  position: relative
+  top: 20px
+  left: 0px
+  z-index: 99999
+  transition: .3s opacity ease
+  &:hover
+    opacity: .8
+
+.opl
+  a
+    width: 73px
+    height: 56px
+    text-indent: -9999px
+    display: block
+    background: url('https://s3.amazonaws.com/onepagelove/one-page-love-award-left.png') no-repeat
+
+.container-info
+  display: inline-block
+  position: relative
+  width: 100%
+  min-height: 490px
+  background-color: $brand-500
+  @media (min-width: $breakpoint-tablet)
+    float: left
+    position: fixed
+    left: 0
+    top: 0
+    height: 100%
+    width: 50%
+
+.container-main
+  display: inline-block
+  padding: 20px
+  @media (min-width: $breakpoint-tablet)
+    float: right
+    position: fixed
+    top: 0
+    right: 0
+    height: 100%
+    width: 45%
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
+    overflow-x: hidden
+
+
+.info
+  &-main
+    opacity: 0 
+    width: 100% 
+    animation: fadeIn ease-in 1 
+    animation-fill-mode: forwards
+    animation-duration: .3s
+    animation-delay: .3s
+    @media (min-width: $breakpoint-tablet)
+      margin: 0
+      position: relative
+      top: 50%
+      transform: translateY(-60%)
+
+  &__headshot
+    display: block
+    margin: auto
+    width: 170px
+    height: 170px
+    border-radius: 200px
+    box-shadow: 0 5px 10px $brand-600
+    &-img
+      @extend .info__headshot
+
+  &__tag
+    @extend #tag
+    display: block
+    margin: 30px auto auto auto
+    opacity: 0.6
+    color: white
+    text-align: center
+
+  &__elevator
+    &-text
+      display: block
+      margin: 10px auto auto auto
+      padding: 0 20px
+      max-width: 460px
+      color: white
+      font-size: 22px
+      text-align: center
+      @media (min-width: 420px)
+        font-size: 28px
+      @media (min-width: $breakpoint-desktop)
+        max-width: 550px
+        padding: 0 40px
+        font-size: 40px
+      &-link
+        padding: 0 4px 2px 4px
+        color: white
+        border-bottom: 2px solid $brand-300
+        text-decoration: none
+        word-wrap: break-word
+        white-space: initial
+        transition: background-color 0.3s, border-color 0.3s
+        &:hover
+          background-color: $brand-600
+          border-color: $brand-300
+
+  &__button
+    display: block
+    position: relative
+    width: 200px
+    margin: 30px auto auto auto
+    padding: 11px 24px
+    color: $brand-500
+    background: white
+    border-color: $brand-500
+    border-radius: 3px
+    border-style: solid
+    border-width: 2px
+    font-weight: 700
+    line-height: 22px
+    text-decoration: none
+    &:after
+      float: right
+      content: $icon-arrow-short-right
+      font-family: "FontAwesome"
+      font-size: 12px
+    &:hover
+      color: white
+      background-color: $brand-500
+    @media (min-width: $breakpoint-tablet)
+      margin: 40px auto auto auto
+    &--dark
+      @extend .info__button
+      color: white
+      background: $brand-500 
+      border-color: white
+      &:hover
+        color: $brand-500
+        background-color: white
+      @media (min-width: $breakpoint-tablet)
+        margin: 40px auto auto auto
+
+  &-footer
+    &__kitchener
+      @extend #fadeUp-animation
+      animation-delay: 1.2s
+      position: absolute
+      left: 20px
+      bottom: 20px
+      height: 27px
+      @media (max-width: $breakpoint-tablet)
+        animation-delay: 0.6s
+      &-img
+        float: left
+      &-text
+        float: left
+        margin: 0 0 0 10px
+        padding-top: 7px
+        font-size: 12px
+        color: white
+        transition: .3s opacity ease
+        opacity: 0.6
+        &:hover
+          opacity: 1
+    &__social
+      position: absolute
+      right: 20px
+      bottom: 20px
+      height: 27px
+      &-icon
+        @extend #fadeUp-animation
+        float: right
+        margin-left: 10px
+        padding-top: 4px
+        color: white
+        text-decoration: none
+        float: right
+        transition: .3s color ease
+        &:hover
+          color: $brand-300
+        &--dribbble
+          @extend .info-footer__social-icon
+          animation-delay: 1.2s
+          @media (max-width: $breakpoint-tablet)
+            animation-delay: 0.6s
+        &--linkedin
+          @extend .info-footer__social-icon
+          animation-delay: 1.4s
+          @media (max-width: $breakpoint-tablet)
+            animation-delay: 0.8s
+        &--instagram
+          @extend .info-footer__social-icon
+          animation-delay: 1.6s
+          @media (max-width: $breakpoint-tablet)
+            animation-delay: 1s
+        &--github
+          @extend .info-footer__social-icon
+          animation-delay: 1.8s
+          @media (max-width: $breakpoint-tablet)
+            animation-delay: 1.2s
+        &--twitter
+          @extend .info-footer__social-icon
+          animation-delay: 2s
+          @media (max-width: $breakpoint-tablet)
+            animation-delay: 1.4s
+
+
+.main
+
+  &__container
+    clear: both
+    display: block
+    margin: 40px 0 0 0
+    overflow: auto
+    &-about
+      @extend .main__container
+      @extend #fadeUp-animation
+      animation-delay: .6s
+      @media (max-width: $breakpoint-tablet)
+        animation-delay: 1s
+    &-projects
+      @extend .main__container
+      @extend #fadeUp-animation
+      animation-delay: 0.8s
+      @media (max-width: $breakpoint-tablet)
+        animation-delay: 1.2s
+    &-clients
+      @extend .main__container
+      @extend #fadeUp-animation
+      animation-delay: 1s
+      @media (max-width: $breakpoint-tablet)
+        animation-delay: 1.4s
+    &-experience
+      @extend .main__container
+      @extend #fadeUp-animation
+      animation-delay: 1.2s
+      @media (max-width: $breakpoint-tablet)
+        animation-delay: 1.6s
+    &-resume
+      @extend .main__container
+      @extend #fadeUp-animation
+      margin-bottom: 40px
+      animation-delay: 1.4s
+      @media (max-width: $breakpoint-tablet)
+        animation-delay: 1.8s
+      @media (min-width: $breakpoint-tablet)
+        margin-bottom: 80px
+
+  &__tag
+    @extend #tag
+    color: $brand-500
+    @media (min-width: $breakpoint-desktop)
+      clear: both
+      float: left
+      width: 80px
+      margin-right: 30px
+
+  &__copy
+    line-height: 26px
+    @media (min-width: $breakpoint-desktop)
+      float: left
+      width: 75%
+      max-width: 500px
+    a
+      padding: 0 4px 2px 4px
+      border-bottom: 2px solid $brand-300
+      font-weight: 400
+      transition: background-color 0.3s, border-color 0.3s
+      &:hover
+        background-color: $brand-100
+        border-color: $brand-500
+        
+  &__project
+    margin-bottom: 20px
+    width: 75%
+    @media (min-width: $breakpoint-desktop)
+      float: left
+      max-width: 500px
+      margin-left: 110px
+    &:last-child
+      margin-bottom: 0
+    &--first
+      @extend .main__project
+      margin-left: 0
+    &-title
+      margin: 20px 0 10px 0
+      transition: .3s opacity ease
+      &:hover
+        opacity: 0.6
+      &:after
+        @extend .wobble
+        position: relative
+        bottom: 0.2ex
+        margin-left: 20px
+        content: $icon-arrow-short-right
+        color: $brand-500
+        font-family: "FontAwesome"
+        font-size: 12px
+      &:first-child
+        margin-top: 3px
+    &-description
+      margin: 0
+      line-height: 26px
+
+  &__list
+    clear: both
+    padding: 0
+    list-style-type: none
+    @media (min-width: $breakpoint-desktop)
+      float: left
+      margin: 20px 0 0 110px
+    &-item
+      margin-bottom: 10px
+      font-weight: 700
+      &:before
+        position: relative
+        bottom: 0.2ex
+        margin-right: 20px
+        content: $icon-chevron-right
+        color: $brand-500
+        font-family: "FontAwesome"
+        font-size: 8px
+
+  &__experience
+    margin-bottom: 20px
+    height: 40px
+    @media (min-width: $breakpoint-desktop)
+      max-width: 500px
+      margin-left: 110px
+      &:first-of-type
+        margin-top: 3px
+    &-year
+      float: right
+      font-weight: 700
+      line-height: 26px
+    &-info
+      float: left
+      &-company
+        display: block
+        font-weight: 700
+        line-height: 26px
+      &-position
+        display: block
+
+  &__resume
+    @extend .main__project-title
+    @extend #fadeUp-animation
+    margin: 0
+    a
+      transition: .3s opacity ease
+    @media (min-width: $breakpoint-desktop)
+      margin-left: 110px
+    &:hover
+      a
+        opacity: 0.6
+
+
